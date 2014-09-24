@@ -6,27 +6,41 @@
 //Create a User constructor that accepts name, email, password, and totalScore paramters and set them appropriatly
 
   //code here
-
+var User = function(name, email, password, totalScore) {
+	this.name = name;
+	this.email = email;
+	this.password = password;
+	this.totalScore = totalScore;
+};
 
 //Create a Question constructor that accepts title, answersArray, rightAnswer, and difficulty paramters
 
   //code here
-
+var Question = function(title, answersArray, rightAnswer, difficulty) {
+	this.title = title;
+	this.answersArray = answersArray;
+	this.rightAnswer = rightAnswer;
+	this.difficulty = difficulty;
+};
 
 //Create a users Array which is going to hold all of our users.
 
   //code here
-
+var users = [];
 
 //Let's say three people signed up for our service, create 3 intances of User and add each to the users Array
 
   //code here
+var Wesley = new User("Wesley", "one@yahoo.com", "tooty", 100);
+var Travis = new User("Travis", "two@juno.com", "echo", 90);
+var Jeremy = new User("Jeremy", "three@hotmail.com", "ogre", 80);
 
+users.push(Wesley, Travis, Jeremy);
 
 //Create a questions Array which is going to hold all of our questions
 
   //code here
-
+var questions = [];
 
 //Now, let's say we wanted to create a quiz about JavaScript. Create three instances of Question which contain the following data
 //title: 'T/F: Inheritance is achieved in JavaScript through Prototypes?'
@@ -34,15 +48,28 @@
 //title: "T/F: In Javascript, == doesn't check 'type' but just the value - where === checks type and value"
 //Fill in the rest of the required data as you see appropriate.
 
-  //code here
+var answers = [];
 
+  //code here
+var firstQ = new Question("T/F: Inheritance is achieved in JavaScript through Prototypes?", answers, true, "easy");
+var secondQ = new Question("T/F: JavaScript is just a scripting version of Java?", answers, false, "easy");
+var thirdQ = new Question("T/F: In JavaScript, == doesn't check 'type' but just the value, whereas === checks type and value", answers, true, "medium");
 
 //Now push all of your instances of Question into the questions Array
 
   //code here
+ questions.push(firstQ, secondQ, thirdQ);
 
 console.log('My users Array and my questions arrray are ...');
 //Now loop console.log your users array and your questions array and verify that they're both holding the right data.
 
   //code here
+  
+var i;
+for (var i = 0; i < users.length; i++) {
+	console.log(users[i]);
+}
 
+for (i = 0; i < users.length; i++) {
+	console.log(questions[i]);
+}
